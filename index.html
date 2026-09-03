@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Martin Mallma | Diseño de Interiores y Mobiliario 3D</title>
+
+  <meta
+    name="description"
+    content="Portafolio profesional de Martin Mallma: diseño de interiores, mobiliario a medida, modelado y visualización 3D."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f4f1;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        linear-gradient(rgba(15,15,15,.55), rgba(15,15,15,.65)),
+        linear-gradient(135deg, #4a4742, #161616);
+      color: white;
+    }
+
+    nav {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      font-size: .95rem;
+    }
+
+    nav a:hover {
+      opacity: .7;
+    }
+
+    .hero {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-small {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: .8rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: .95;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      max-width: 650px;
+      color: #e7e7e7;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border: 1px solid white;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #111;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: .85;
+    }
+
+    section {
+      padding: 100px 5%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .75rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 40px;
+      line-height: 1.1;
+    }
+
+    .intro {
+      max-width: 760px;
+      font-size: 1.15rem;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      min-height: 360px;
+      background: #dedbd5;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project span {
+      text-transform: uppercase;
+      font-size: .7rem;
+      letter-spacing: 2px;
+      color: #666;
+    }
+
+    .project h3 {
+      margin-top: 7px;
+      font-size: 1.6rem;
+    }
+
+    .project p {
+      margin-top: 8px;
+      color: #555;
+      font-size: .9rem;
+    }
+
+    .services {
+      background: #171717;
+      color: white;
+    }
+
+    .services .section-label {
+      color: #aaa;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .service {
+      border-top: 1px solid #555;
+      padding-top: 25px;
+    }
+
+    .service h3 {
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .service p {
+      color: #aaa;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-grid p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stat {
+      background: white;
+      padding: 30px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2.2rem;
+    }
+
+    .contact {
+      text-align: center;
+      background: #e5e1da;
+    }
+
+    .contact h2 {
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact p {
+      margin: -15px auto 35px;
+      max-width: 600px;
+      color: #555;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 30px 5%;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        align-items: flex-start;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .portfolio-grid,
+      .service-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 6%;
+      }
+
+      .project {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="inicio">
+  <nav>
+    <div class="logo">MARTIN MALLMA</div>
+
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-small">
+        Diseño · Modelado · Visualización
+      </div>
+
+      <h1>Espacios pensados para convertirse en realidad.</h1>
+
+      <p>
+        Diseño de interiores, mobiliario a medida, modelado y
+        visualización 3D para proyectos residenciales y comerciales.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#proyectos">
+          Ver proyectos
+        </a>
+
+        <a class="btn" href="#contacto">
+          Contactar
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section id="proyectos">
+  <div class="container">
+
+    <div class="section-label">Portafolio</div>
+
+    <h2>Proyectos seleccionados</h2>
+
+    <p class="intro">
+      Una selección de trabajos de diseño, mobiliario y visualización 3D.
+      Próximamente cada categoría mostrará proyectos reales desarrollados
+      para diferentes clientes.
+    </p>
+
+    <div class="portfolio-grid">
+
+      <article class="project">
+        <span>Interiorismo</span>
+        <h3>Cocinas</h3>
+        <p>Diseño, distribución y mobiliario personalizado.</p>
+      </article>
+
+      <article class="project">
+        <span>Interiorismo</span>
+        <h3>Dormitorios</h3>
+        <p>Soluciones funcionales adaptadas a cada espacio.</p>
+      </article>
+
+      <article class="project">
+        <span>Mobiliario</span>
+        <h3>Closets</h3>
+        <p>Organización, almacenamiento y diseño a medida.</p>
+      </article>
+
+      <article class="project">
+        <span>Mobiliario</span>
+        <h3>Centros de entretenimiento</h3>
+        <p>Diseño funcional integrado al ambiente.</p>
+      </article>
+
+      <article class="project">
+        <span>Interiorismo</span>
+        <h3>Baños</h3>
+        <p>Mobiliario y visualización previa del proyecto.</p>
+      </article>
+
+      <article class="project">
+        <span>Diseño personalizado</span>
+        <h3>Otros proyectos</h3>
+        <p>Soluciones desarrolladas según requerimientos específicos.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="services" id="servicios">
+  <div class="container">
+
+    <div class="section-label">Servicios</div>
+
+    <h2>De la idea a una propuesta visual clara.</h2>
+
+    <div class="service-grid">
+
+      <div class="service">
+        <h3>Diseño de mobiliario</h3>
+        <p>
+          Desarrollo de propuestas de mobiliario personalizado
+          de acuerdo con el espacio y requerimientos del cliente.
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Modelado 3D</h3>
+        <p>
+          Representación tridimensional de mobiliario y ambientes
+          para visualizar el proyecto antes de su fabricación.
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Renderizado</h3>
+        <p>
+          Creación de imágenes digitales para comunicar materiales,
+          composición y apariencia general del proyecto.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="sobre-mi">
+  <div class="container">
+
+    <div class="section-label">Sobre mí</div>
+
+    <div class="about-grid">
+
+      <div>
+        <h2>Diseño respaldado por experiencia real.</h2>
+
+        <p>
+          Soy Martin Mallma, Bachiller en Ingeniería de Software
+          con experiencia en diseño, modelado y visualización 3D
+          de mobiliario.
+        </p>
+
+        <p>
+          Desde 2022 desarrollo propuestas para cocinas, closets,
+          dormitorios, centros de entretenimiento y otros muebles
+          personalizados, transformando requerimientos en soluciones
+          visuales que facilitan la evaluación previa a fabricación.
+        </p>
+
+        <p>
+          Trabajo principalmente con SketchUp, Lumion y herramientas
+          digitales de diseño y visualización.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>2022</strong>
+          Experiencia profesional desde
+        </div>
+
+        <div class="stat">
+          <strong>3D</strong>
+          Modelado y visualización
+        </div>
+
+        <div class="stat">
+          <strong>+190</strong>
+          Diseños desarrollados
+        </div>
+
+        <div class="stat">
+          <strong>A medida</strong>
+          Soluciones personalizadas
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="contact" id="contacto">
+  <div class="container">
+
+    <div class="section-label">Contacto</div>
+
+    <h2>¿Tienes un espacio o mueble que quieres visualizar?</h2>
+
+    <p>
+      Podemos convertir tus ideas y requerimientos en una propuesta
+      visual antes de pasar a fabricación.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+
+      <a
+        class="btn btn-primary"
+        href="https://www.linkedin.com/in/martinmallma"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Martin Mallma</span>
+
+    <span>
+      Diseño de Interiores · Mobiliario · Visualización 3D
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
